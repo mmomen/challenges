@@ -43,5 +43,3 @@ var translateRomanNumeral = function(romanNumeral){
   }
   return null;
 };
-
-console.log(translateRomanNumeral('XI'));

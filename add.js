@@ -7,7 +7,12 @@ add(2)(5); // 7
 var add = function(x,y) {
   if (!y) {
     return function(yy) {
-      return x + yy;
+      if (typeof yy !== 'undefined') {
+        x += yy;
+        return arguments.callee;
+      } else {
+        return x;
+      }
     };
   }
   return x + y;

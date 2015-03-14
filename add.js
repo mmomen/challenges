@@ -5,5 +5,10 @@ add(2)(5); // 7
 */
 
 var add = function(x,y) {
-  return x + (y || 0);
+  if (!y) {
+    return function(yy) {
+      return x + yy;
+    };
+  }
+  return x + y;
 };
